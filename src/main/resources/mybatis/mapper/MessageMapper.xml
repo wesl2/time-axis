@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.fsyj.timeaxis.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="site.fsyj.timeaxis.entity.Message">
+    <!--@mbg.generated-->
+    <!--@Table t_message-->
+    <id column="id" property="id" />
+    <result column="from" property="from" />
+    <result column="to" property="to" />
+    <result column="time" property="time" />
+    <result column="type" property="type" />
+    <result column="content" property="content" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `from`, `to`, `time`, `type`, content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_message
+    where id = #{id}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from t_message
+    where id = #{id}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.Message" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_message (`from`, `to`, `time`, `type`, content)
+    values (#{from}, #{to}, #{time}, #{type}, #{content})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.Message" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_message
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="from != null">
+        `from`,
+      </if>
+      <if test="to != null">
+        `to`,
+      </if>
+      <if test="time != null">
+        `time`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="from != null">
+        #{from},
+      </if>
+      <if test="to != null">
+        #{to},
+      </if>
+      <if test="time != null">
+        #{time},
+      </if>
+      <if test="type != null">
+        #{type},
+      </if>
+      <if test="content != null">
+        #{content},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="site.fsyj.timeaxis.entity.Message">
+    <!--@mbg.generated-->
+    update t_message
+    <set>
+      <if test="from != null">
+        `from` = #{from},
+      </if>
+      <if test="to != null">
+        `to` = #{to},
+      </if>
+      <if test="time != null">
+        `time` = #{time},
+      </if>
+      <if test="type != null">
+        `type` = #{type},
+      </if>
+      <if test="content != null">
+        content = #{content},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="site.fsyj.timeaxis.entity.Message">
+    <!--@mbg.generated-->
+    update t_message
+    set `from` = #{from},
+      `to` = #{to},
+      `time` = #{time},
+      `type` = #{type},
+      content = #{content}
+    where id = #{id}
+  </update>
+</mapper>
