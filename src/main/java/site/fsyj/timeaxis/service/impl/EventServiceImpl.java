@@ -9,14 +9,21 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class EventServiceImpl implements EventService{
+public class EventServiceImpl implements EventService {
 
     @Resource
     private EventMapper eventMapper;
 
     @Override
-    public int deleteByPrimaryKey(Integer id) {
-        return eventMapper.deleteByPrimaryKey(id);
+    public int deleteByPrimaryKey(Integer id, String userid) {
+        List<Event> events = selectAll(userid);
+        for (Event event : events) {
+            if (event.getId().equals(id)) {
+                return eventMapper.deleteByPrimaryKey(id);
+
+            }
+        }
+        throw new RuntimeException("该用户无权删除事件");
     }
 
     @Override

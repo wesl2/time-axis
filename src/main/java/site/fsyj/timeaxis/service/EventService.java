@@ -7,7 +7,7 @@ import java.util.List;
 public interface EventService{
 
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Integer id, String userid);
 
     int insert(Event record);
 

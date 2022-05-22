@@ -49,9 +49,9 @@ public class EventController {
 
     @ApiOperation("删除事件")
     @DeleteMapping("/{eventId}")
-    public ResponseEntity<String> deleteEvent(@PathVariable String eventId) {
-        eventServiceImpl.deleteByPrimaryKey(Integer.valueOf(eventId));
+    public ResponseEntity<String> deleteEvent(@PathVariable String eventId, HttpServletRequest request) {
+        String userId = (String) request.getAttribute("userId");
+        eventServiceImpl.deleteByPrimaryKey(Integer.valueOf(eventId), userId);
         return ResponseEntity.ok("删除成功");
     }
-
 }
