@@ -1,10 +1,13 @@
 package site.fsyj.timeaxis.service.impl;
 
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import site.fsyj.timeaxis.mapper.EventMapper;
 import site.fsyj.timeaxis.entity.Event;
+import site.fsyj.timeaxis.mapper.EventMapper;
 import site.fsyj.timeaxis.service.EventService;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class EventServiceImpl implements EventService{
 
@@ -39,6 +42,11 @@ public class EventServiceImpl implements EventService{
     @Override
     public int updateByPrimaryKey(Event record) {
         return eventMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Event> selectAll(String userid) {
+        return eventMapper.selectAllByOwner(Long.valueOf(userid));
     }
 
 }

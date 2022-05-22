@@ -1,6 +1,9 @@
 package site.fsyj.timeaxis.service;
 
 import site.fsyj.timeaxis.entity.Event;
+
+import java.util.List;
+
 public interface EventService{
 
 
@@ -16,4 +19,5 @@ public interface EventService{
 
     int updateByPrimaryKey(Event record);
 
+    List<Event> selectAll(String userid);
 }

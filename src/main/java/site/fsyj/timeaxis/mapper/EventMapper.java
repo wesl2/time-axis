@@ -1,7 +1,9 @@
 package site.fsyj.timeaxis.mapper;
-
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import site.fsyj.timeaxis.entity.Event;
+
+import java.util.List;
 
 @Mapper
 public interface EventMapper {
@@ -46,4 +48,13 @@ public interface EventMapper {
      * @return update count
      */
     int updateByPrimaryKey(Event record);
+
+    /**
+     * select all
+     * @param owner
+     * @return
+     */
+    List<Event> selectAllByOwner(@Param("owner")Long owner);
+
+
 }

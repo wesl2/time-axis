@@ -1,7 +1,7 @@
 package site.fsyj.timeaxis.controller;
 
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,26 +14,27 @@ import org.springframework.web.bind.annotation.RestController;
 import site.fsyj.timeaxis.util.EmailRandomUtil;
 import site.fsyj.timeaxis.util.RedisCache;
 
+import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description: 发送邮件获取验证码
- * @author: liuchuanfeng
- * @time: 2020/12/8 15:52
+ * 发送邮件获取验证码
+ * @author fsyj
  */
+@Api("邮箱验证")
 @RestController
 @Slf4j
 @RequestMapping("/user")
 public class GetEmailCodeController {
 
-    @Autowired
+    @Resource
     RedisCache redisCache;
 
     /**
      * 注入发送邮件的bean
      */
-    @Autowired
+    @Resource(type = JavaMailSender.class)
     JavaMailSender mailSender;
 
     @Value("${spring.mail.username}")
@@ -53,7 +54,7 @@ public class GetEmailCodeController {
     public ResponseEntity<String> getEmail(@PathVariable String email) {
         try {
             String body = setEmailBody(email);
-            MimeMessage mimeMessage = this.mailSender.createMimeMessage();
+            MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
             //设置发件邮箱
             message.setFrom(emailUserName);

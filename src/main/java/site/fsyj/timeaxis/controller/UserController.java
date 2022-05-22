@@ -6,10 +6,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import site.fsyj.timeaxis.entity.User;
 import site.fsyj.timeaxis.service.UserService;
 import site.fsyj.timeaxis.util.JwtUtil;
@@ -36,7 +33,7 @@ public class UserController {
 
     @ApiOperation("登录")
     @PostMapping("/login")
-    public ResponseEntity<Map<String, Object>> login(@RequestParam String email, @RequestParam String password) {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody String email, @RequestBody String password) {
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
@@ -50,9 +47,9 @@ public class UserController {
 
     @ApiOperation("注册，需要先申请邮箱验证码")
     @PostMapping("/registry")
-    public ResponseEntity<String> registry(@RequestParam String email, @RequestParam String password, @RequestParam String name,
-                                           @RequestParam String no, @RequestParam String major,
-                                           @ApiParam("m：男， f：女") @RequestParam String sex, @RequestParam String emailCode) {
+    public ResponseEntity<String> registry(@RequestBody String email, @RequestBody String password, @RequestBody String name,
+                                           @RequestBody String no, @RequestBody String major,
+                                           @ApiParam("m：男， f：女") @RequestBody String sex, @RequestBody String emailCode) {
         String code = redisCache.getCacheObject(email);
         if (code != null && code.equals(emailCode)) {
             // 验证码通过验证
