@@ -10,7 +10,20 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  mail:
+    host: imap.163.com
+    username: java_is_best@163.com
+    password: PYJTXJYHYTWNOKFZ
+    port: 993
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: site.fsyj.timeaxis.entity
+#
+#spring:
+#  mail:
+#    protocol: imap
+#    host: imap.163.com
+#    username: java_is_best@163.com
+#    password: PYJTXJYHYTWNOKFZ
+#    port: 993

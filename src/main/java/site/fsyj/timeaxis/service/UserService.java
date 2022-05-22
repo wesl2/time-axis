@@ -16,4 +16,10 @@ public interface UserService{
 
     int updateByPrimaryKey(User record);
 
+    /**
+     * 登录接口，放回登录结果的封装
+     * @param user
+     * @return
+     */
+    User login(User user);
 }

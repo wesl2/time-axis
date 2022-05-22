@@ -1,6 +1,6 @@
 package site.fsyj.timeaxis.mapper;
-
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import site.fsyj.timeaxis.entity.User;
 
 @Mapper
@@ -46,4 +46,13 @@ public interface UserMapper {
      * @return update count
      */
     int updateByPrimaryKey(User record);
+
+    /**
+     * 根据用户名（Email）查询
+     * @param username
+     * @return
+     */
+    User selectByEmail(@Param("email")String username);
+
+
 }

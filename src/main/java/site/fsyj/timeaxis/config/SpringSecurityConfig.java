@@ -1,6 +1,5 @@
 package site.fsyj.timeaxis.config;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +22,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     private static final String[] AUTH_LIST = {
-            "/user/login",
+            "/user/**",
             "/swagger-ui.html",
             "/swagger-ui/*",
             "/swagger-resources/**",
@@ -31,14 +30,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
             "/v3/api-docs",
             "/webjars/**",
             "/reg/**",
-            "/res/**"
+            "/res/**",
+
     };
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and()
-                //关闭csrf
-                .csrf().disable()
+        http
+                .csrf().disable()//关闭csrf
                 //不通过Session获取SecurityContext
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
@@ -50,11 +49,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
+        http.cors();
     }
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
+    public AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManagerBean();
     }
 
@@ -62,19 +62,5 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    /*@Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.addAllowedMethod("*");
-        corsConfiguration.setAllowCredentials(true);
-
-        source.registerCorsConfiguration("/**", corsConfiguration);
-        return new CorsFilter(source);
-    }*/
 
 }
