@@ -28,4 +28,3 @@ public interface UserService {
     User selectByEmail(String email);
 }
 
-
