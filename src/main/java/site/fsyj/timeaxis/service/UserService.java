@@ -24,6 +24,8 @@ public interface UserService {
      * @return
      */
     User login(User user);
+
+    User selectByEmail(String email);
 }
 
 

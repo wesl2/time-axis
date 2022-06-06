@@ -53,9 +53,12 @@ public class GetEmailCodeController {
     @GetMapping(value = "/getCode/{email}")
     public ResponseEntity<String> getEmail(@PathVariable String email) {
         try {
+            // 设置邮件格式
             String body = setEmailBody(email);
+            // 创建邮件对象
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
+
             //设置发件邮箱
             message.setFrom(emailUserName);
             //设置收件人
@@ -65,6 +68,7 @@ public class GetEmailCodeController {
             //第二个参数true表示使用HTML语言来编写邮件
             message.setText(body);
             log.info("getEmail send email message: [{}]", message);
+            // 发邮件
             mailSender.send(mimeMessage);
         } catch (Exception e) {
             log.error("[{}] send email message exception", email, e);

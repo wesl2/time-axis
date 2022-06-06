@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import site.fsyj.timeaxis.dto.LoginDto;
 import site.fsyj.timeaxis.dto.RegisterUser;
 import site.fsyj.timeaxis.entity.User;
+import site.fsyj.timeaxis.service.GroupService;
 import site.fsyj.timeaxis.service.UserService;
 import site.fsyj.timeaxis.util.JwtUtil;
 import site.fsyj.timeaxis.util.RedisCache;
@@ -38,6 +39,9 @@ public class UserController {
 
     @Autowired
     private RedisCache redisCache;
+
+    @Resource
+    private GroupService groupServiceImpl;
 
     @ApiOperation("登录")
     @PostMapping("/login")
@@ -69,6 +73,10 @@ public class UserController {
             user.setSex(registerUser.getSex());
             user.setEnable(true);
             userServiceImpl.insert(user);
+            // 注册成功后自动加入到Root群
+            // 通过Email查询用户ID
+            user = userServiceImpl.selectByEmail(registerUser.getEmail());
+            groupServiceImpl.join(String.valueOf(user.getId()), "root");
             return ResponseEntity.ok("注册成功");
         } else {
             return ResponseEntity.badRequest().body("请输入正确的验证码或验证码已超时");

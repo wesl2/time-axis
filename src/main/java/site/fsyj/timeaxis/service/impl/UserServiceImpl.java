@@ -70,6 +70,9 @@ public class UserServiceImpl implements UserService {
         return selectByPrimaryKey(user.getId());
     }
 
+    @Override
+    public User selectByEmail(String email) {
+        return userMapper.selectByEmail(email);
+    }
+
 }
-
-
