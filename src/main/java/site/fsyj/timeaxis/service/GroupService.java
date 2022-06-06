@@ -1,7 +1,8 @@
 package site.fsyj.timeaxis.service;
 
 import site.fsyj.timeaxis.entity.Group;
-public interface GroupService{
+
+public interface GroupService {
 
 
     int deleteByPrimaryKey(Integer id);
@@ -16,4 +17,9 @@ public interface GroupService{
 
     int updateByPrimaryKey(Group record);
 
+    void join(String userId, String groupname);
+
+    boolean createGroup(String userid, String groupName);
 }
+
+

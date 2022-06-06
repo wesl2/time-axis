@@ -1,2 +1,31 @@
 server:
   port: 8081
+
+
+spring:
+  datasource:
+    username: time_axios
+    password: j20#gSl9%IW
+    url: jdbc:mysql://localhost:3306/time?useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  mail:
+    host: smtp.163.com
+    username: java_is_best@163.com
+    password: PYJTXJYHYTWNOKFZ
+    port: 25
+
+  redis:
+    host: localhost
+    port: 14831
+    password: tmXxp0#Qus9%rqj^J
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 10
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: site.fsyj.timeaxis.entity

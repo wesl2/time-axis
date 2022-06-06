@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 import java.util.Objects;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
@@ -71,3 +71,5 @@ public class UserServiceImpl implements UserService{
     }
 
 }
+
+

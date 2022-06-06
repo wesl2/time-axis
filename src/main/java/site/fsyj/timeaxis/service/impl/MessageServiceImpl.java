@@ -5,8 +5,9 @@ import javax.annotation.Resource;
 import site.fsyj.timeaxis.mapper.MessageMapper;
 import site.fsyj.timeaxis.entity.Message;
 import site.fsyj.timeaxis.service.MessageService;
+
 @Service
-public class MessageServiceImpl implements MessageService{
+public class MessageServiceImpl implements MessageService {
 
     @Resource
     private MessageMapper messageMapper;
@@ -42,3 +43,5 @@ public class MessageServiceImpl implements MessageService{
     }
 
 }
+
+

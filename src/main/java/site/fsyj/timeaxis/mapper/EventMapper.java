@@ -1,14 +1,13 @@
 package site.fsyj.timeaxis.mapper;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import site.fsyj.timeaxis.entity.Event;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;import site.fsyj.timeaxis.entity.Event;import java.util.List;
 
 @Mapper
 public interface EventMapper {
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -16,6 +15,7 @@ public interface EventMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -23,6 +23,7 @@ public interface EventMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -30,6 +31,7 @@ public interface EventMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -37,6 +39,7 @@ public interface EventMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -44,6 +47,7 @@ public interface EventMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */
@@ -51,10 +55,9 @@ public interface EventMapper {
 
     /**
      * select all
+     *
      * @param owner
      * @return
      */
-    List<Event> selectAllByOwner(@Param("owner")Long owner);
-
-
+    List<Event> selectAllByOwner(@Param("owner") Long owner);
 }

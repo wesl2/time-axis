@@ -1,10 +1,11 @@
 package site.fsyj.timeaxis.service;
 
+import site.fsyj.timeaxis.dto.EventDto;
 import site.fsyj.timeaxis.entity.Event;
 
 import java.util.List;
 
-public interface EventService{
+public interface EventService {
 
 
     int deleteByPrimaryKey(Integer id, String userid);
@@ -20,4 +21,8 @@ public interface EventService{
     int updateByPrimaryKey(Event record);
 
     List<Event> selectAll(String userid);
+
+    int deleteByPrimaryKey(Integer id);
+
+    void addGroupEvent(String userid, String groupid, EventDto groupEvent);
 }

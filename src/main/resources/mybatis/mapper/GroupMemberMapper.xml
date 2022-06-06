@@ -7,10 +7,11 @@
     <id column="id" property="id" />
     <result column="menber_id" property="menberId" />
     <result column="type" property="type" />
+    <result column="group_id" property="groupId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, menber_id, `type`
+    id, menber_id, `type`, group_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -26,8 +27,8 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.GroupMember" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into t_group_member (menber_id, `type`)
-    values (#{menberId}, #{type})
+    insert into t_group_member (menber_id, `type`, group_id)
+    values (#{menberId}, #{type}, #{groupId})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.GroupMember" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -39,6 +40,9 @@
       <if test="type != null">
         `type`,
       </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="menberId != null">
@@ -46,6 +50,9 @@
       </if>
       <if test="type != null">
         #{type},
+      </if>
+      <if test="groupId != null">
+        #{groupId},
       </if>
     </trim>
   </insert>
@@ -59,6 +66,9 @@
       <if test="type != null">
         `type` = #{type},
       </if>
+      <if test="groupId != null">
+        group_id = #{groupId},
+      </if>
     </set>
     where id = #{id}
   </update>
@@ -66,7 +76,12 @@
     <!--@mbg.generated-->
     update t_group_member
     set menber_id = #{menberId},
-      `type` = #{type}
+      `type` = #{type},
+      group_id = #{groupId}
     where id = #{id}
   </update>
+
+  <select id="selectGroupMember" resultType="java.lang.Integer">
+    select menber_id from t_group_member where group_id = #{groupId}
+  </select>
 </mapper>

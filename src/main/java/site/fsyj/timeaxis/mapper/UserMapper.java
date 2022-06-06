@@ -1,12 +1,13 @@
 package site.fsyj.timeaxis.mapper;
+
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import site.fsyj.timeaxis.entity.User;
+import org.apache.ibatis.annotations.Param;import site.fsyj.timeaxis.entity.User;
 
 @Mapper
 public interface UserMapper {
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -14,6 +15,7 @@ public interface UserMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -21,6 +23,7 @@ public interface UserMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -28,6 +31,7 @@ public interface UserMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -35,6 +39,7 @@ public interface UserMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -42,6 +47,7 @@ public interface UserMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */
@@ -49,10 +55,9 @@ public interface UserMapper {
 
     /**
      * 根据用户名（Email）查询
+     *
      * @param username
      * @return
      */
-    User selectByEmail(@Param("email")String username);
-
-
+    User selectByEmail(@Param("email") String username);
 }

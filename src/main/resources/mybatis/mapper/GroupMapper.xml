@@ -69,4 +69,7 @@
       creator = #{creator}
     where id = #{id}
   </update>
+    <select id="selectByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select id from t_group where name = #{groupname}
+    </select>
 </mapper>

@@ -1,7 +1,8 @@
 package site.fsyj.timeaxis.service;
 
 import site.fsyj.timeaxis.entity.Message;
-public interface MessageService{
+
+public interface MessageService {
 
 
     int deleteByPrimaryKey(Integer id);
@@ -17,3 +18,5 @@ public interface MessageService{
     int updateByPrimaryKey(Message record);
 
 }
+
+

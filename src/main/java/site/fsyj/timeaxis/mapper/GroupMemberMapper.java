@@ -1,12 +1,16 @@
 package site.fsyj.timeaxis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import site.fsyj.timeaxis.entity.GroupMember;
+
+import java.util.List;
 
 @Mapper
 public interface GroupMemberMapper {
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -14,6 +18,7 @@ public interface GroupMemberMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -21,6 +26,7 @@ public interface GroupMemberMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -28,6 +34,7 @@ public interface GroupMemberMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -35,6 +42,7 @@ public interface GroupMemberMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -42,8 +50,11 @@ public interface GroupMemberMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */
     int updateByPrimaryKey(GroupMember record);
+
+    List<Integer> selectGroupMember(@Param("groupId") Integer groupId);
 }

@@ -5,8 +5,9 @@ import javax.annotation.Resource;
 import site.fsyj.timeaxis.mapper.GroupMemberMapper;
 import site.fsyj.timeaxis.entity.GroupMember;
 import site.fsyj.timeaxis.service.GroupMemberService;
+
 @Service
-public class GroupMemberServiceImpl implements GroupMemberService{
+public class GroupMemberServiceImpl implements GroupMemberService {
 
     @Resource
     private GroupMemberMapper groupMemberMapper;
@@ -42,3 +43,6 @@ public class GroupMemberServiceImpl implements GroupMemberService{
     }
 
 }
+
+
+

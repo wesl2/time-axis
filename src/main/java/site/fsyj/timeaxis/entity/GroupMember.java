@@ -6,23 +6,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@ApiModel(value="site-fsyj-timeaxis-entity-GroupMember")
+@ApiModel(value = "t_group_member")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class GroupMember {
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value = "")
     private Integer id;
 
     /**
-    * 群成员ID
-    */
-    @ApiModelProperty(value="群成员ID")
+     * 群成员ID
+     */
+    @ApiModelProperty(value = "群成员ID")
     private Integer menberId;
 
     /**
-    * 0：群主，1：普通群员
-    */
-    @ApiModelProperty(value="0：群主，1：普通群员")
+     * 0：群主，1：普通群员
+     */
+    @ApiModelProperty(value = "0：群主，1：普通群员")
     private String type;
+
+    /**
+     * 群ID
+     */
+    @ApiModelProperty(value = "群ID")
+    private Integer groupId;
 }
