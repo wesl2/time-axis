@@ -7,7 +7,6 @@ import site.fsyj.timeaxis.entity.Group;
 public interface GroupMapper {
     /**
      * delete by primary key
-     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -15,7 +14,6 @@ public interface GroupMapper {
 
     /**
      * insert record to table
-     *
      * @param record the record
      * @return insert count
      */
@@ -23,7 +21,6 @@ public interface GroupMapper {
 
     /**
      * insert record to table selective
-     *
      * @param record the record
      * @return insert count
      */
@@ -31,7 +28,6 @@ public interface GroupMapper {
 
     /**
      * select by primary key
-     *
      * @param id primary key
      * @return object by primary key
      */
@@ -39,7 +35,6 @@ public interface GroupMapper {
 
     /**
      * update record selective
-     *
      * @param record the updated record
      * @return update count
      */

@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Event {
+
     @ApiModelProperty(value = "")
     private Integer id;
 
@@ -38,9 +39,10 @@ public class Event {
     @ApiModelProperty(value = "截止时间")
     private String time;
 
+
     /**
-     * 事件拥有者
-     */
-    @ApiModelProperty(value = "事件拥有者")
+    * 事件拥有者
+    */
+    @ApiModelProperty(value="事件拥有者")
     private Integer owner;
 }

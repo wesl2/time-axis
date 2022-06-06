@@ -7,11 +7,18 @@
     <id column="id" property="id" />
     <result column="menber_id" property="menberId" />
     <result column="type" property="type" />
+<<<<<<< HEAD
     <result column="group_id" property="groupId" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
     id, menber_id, `type`, group_id
+=======
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, menber_id, `type`
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -27,8 +34,13 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.GroupMember" useGeneratedKeys="true">
     <!--@mbg.generated-->
+<<<<<<< HEAD
     insert into t_group_member (menber_id, `type`, group_id)
     values (#{menberId}, #{type}, #{groupId})
+=======
+    insert into t_group_member (menber_id, `type`)
+    values (#{menberId}, #{type})
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="site.fsyj.timeaxis.entity.GroupMember" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -40,9 +52,12 @@
       <if test="type != null">
         `type`,
       </if>
+<<<<<<< HEAD
       <if test="groupId != null">
         group_id,
       </if>
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="menberId != null">
@@ -51,9 +66,12 @@
       <if test="type != null">
         #{type},
       </if>
+<<<<<<< HEAD
       <if test="groupId != null">
         #{groupId},
       </if>
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="site.fsyj.timeaxis.entity.GroupMember">
@@ -66,9 +84,12 @@
       <if test="type != null">
         `type` = #{type},
       </if>
+<<<<<<< HEAD
       <if test="groupId != null">
         group_id = #{groupId},
       </if>
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
     </set>
     where id = #{id}
   </update>
@@ -76,6 +97,7 @@
     <!--@mbg.generated-->
     update t_group_member
     set menber_id = #{menberId},
+<<<<<<< HEAD
       `type` = #{type},
       group_id = #{groupId}
     where id = #{id}
@@ -84,4 +106,9 @@
   <select id="selectGroupMember" resultType="java.lang.Integer">
     select menber_id from t_group_member where group_id = #{groupId}
   </select>
+=======
+      `type` = #{type}
+    where id = #{id}
+  </update>
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
 </mapper>

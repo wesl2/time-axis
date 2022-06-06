@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @ApiModel(value = "t_message")
 @Data
 @AllArgsConstructor

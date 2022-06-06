@@ -1,12 +1,17 @@
 package site.fsyj.timeaxis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;import site.fsyj.timeaxis.entity.User;
+import org.apache.ibatis.annotations.Param;
+import site.fsyj.timeaxis.entity.User;
 
 @Mapper
 public interface UserMapper {
     /**
      * delete by primary key
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param id primaryKey
      * @return deleteCount
@@ -15,6 +20,10 @@ public interface UserMapper {
 
     /**
      * insert record to table
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param record the record
      * @return insert count
@@ -23,6 +32,10 @@ public interface UserMapper {
 
     /**
      * insert record to table selective
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param record the record
      * @return insert count
@@ -31,6 +44,10 @@ public interface UserMapper {
 
     /**
      * select by primary key
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param id primary key
      * @return object by primary key
@@ -39,6 +56,10 @@ public interface UserMapper {
 
     /**
      * update record selective
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param record the updated record
      * @return update count
@@ -47,6 +68,10 @@ public interface UserMapper {
 
     /**
      * update record
+     * <<<<<<< HEAD
+     * <p>
+     * =======
+     * >>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      *
      * @param record the updated record
      * @return update count
@@ -55,9 +80,11 @@ public interface UserMapper {
 
     /**
      * 根据用户名（Email）查询
+     * <<<<<<< HEAD
      *
      * @param username
      * @return
      */
     User selectByEmail(@Param("email") String username);
 }
+

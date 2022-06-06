@@ -40,6 +40,7 @@ public class GetEmailCodeController {
     private String emailUserName;
 
     //定义发送的标题
+
     public static String title = "获取验证码";
 
 
@@ -58,7 +59,6 @@ public class GetEmailCodeController {
             // 创建邮件对象
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-
             //设置发件邮箱
             message.setFrom(emailUserName);
             //设置收件人
@@ -70,6 +70,7 @@ public class GetEmailCodeController {
             log.info("getEmail send email message: [{}]", message);
             // 发邮件
             mailSender.send(mimeMessage);
+            this.mailSender.send(mimeMessage);
         } catch (Exception e) {
             log.error("[{}] send email message exception", email, e);
             throw new RuntimeException("邮箱有误");

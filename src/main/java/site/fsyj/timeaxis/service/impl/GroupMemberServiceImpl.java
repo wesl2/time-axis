@@ -1,10 +1,11 @@
 package site.fsyj.timeaxis.service.impl;
 
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import site.fsyj.timeaxis.mapper.GroupMemberMapper;
 import site.fsyj.timeaxis.entity.GroupMember;
+import site.fsyj.timeaxis.mapper.GroupMemberMapper;
 import site.fsyj.timeaxis.service.GroupMemberService;
+
+import javax.annotation.Resource;
 
 @Service
 public class GroupMemberServiceImpl implements GroupMemberService {
@@ -43,6 +44,3 @@ public class GroupMemberServiceImpl implements GroupMemberService {
     }
 
 }
-
-
-

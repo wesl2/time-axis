@@ -18,5 +18,3 @@ public interface MessageService {
     int updateByPrimaryKey(Message record);
 
 }
-
-

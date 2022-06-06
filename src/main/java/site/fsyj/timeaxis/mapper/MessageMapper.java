@@ -7,7 +7,10 @@ import site.fsyj.timeaxis.entity.Message;
 public interface MessageMapper {
     /**
      * delete by primary key
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param id primaryKey
      * @return deleteCount
      */
@@ -15,7 +18,10 @@ public interface MessageMapper {
 
     /**
      * insert record to table
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the record
      * @return insert count
      */
@@ -23,7 +29,10 @@ public interface MessageMapper {
 
     /**
      * insert record to table selective
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the record
      * @return insert count
      */
@@ -31,7 +40,10 @@ public interface MessageMapper {
 
     /**
      * select by primary key
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param id primary key
      * @return object by primary key
      */
@@ -39,7 +51,10 @@ public interface MessageMapper {
 
     /**
      * update record selective
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the updated record
      * @return update count
      */
@@ -47,7 +62,10 @@ public interface MessageMapper {
 
     /**
      * update record
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the updated record
      * @return update count
      */

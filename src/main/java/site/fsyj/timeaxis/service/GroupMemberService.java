@@ -2,6 +2,7 @@ package site.fsyj.timeaxis.service;
 
 import site.fsyj.timeaxis.entity.GroupMember;
 
+
 public interface GroupMemberService {
 
 
@@ -18,6 +19,3 @@ public interface GroupMemberService {
     int updateByPrimaryKey(GroupMember record);
 
 }
-
-
-

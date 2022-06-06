@@ -23,7 +23,6 @@ public class GroupServiceImpl implements GroupService {
     private UserMapper userMapper;
     @Resource
     private GroupMemberMapper groupMemberMapper;
-
     @Override
     public int deleteByPrimaryKey(Integer id) {
         return groupMapper.deleteByPrimaryKey(id);
@@ -97,5 +96,4 @@ public class GroupServiceImpl implements GroupService {
     }
 
 }
-
 

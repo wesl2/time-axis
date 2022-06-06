@@ -1,13 +1,19 @@
 package site.fsyj.timeaxis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;import site.fsyj.timeaxis.entity.Event;import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import site.fsyj.timeaxis.entity.Event;
+
+import java.util.List;
 
 @Mapper
 public interface EventMapper {
     /**
      * delete by primary key
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param id primaryKey
      * @return deleteCount
      */
@@ -15,7 +21,10 @@ public interface EventMapper {
 
     /**
      * insert record to table
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the record
      * @return insert count
      */
@@ -23,7 +32,10 @@ public interface EventMapper {
 
     /**
      * insert record to table selective
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the record
      * @return insert count
      */
@@ -31,7 +43,10 @@ public interface EventMapper {
 
     /**
      * select by primary key
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param id primary key
      * @return object by primary key
      */
@@ -39,7 +54,10 @@ public interface EventMapper {
 
     /**
      * update record selective
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the updated record
      * @return update count
      */
@@ -47,7 +65,10 @@ public interface EventMapper {
 
     /**
      * update record
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 961dc4a4990572e3a9cec04845f0e86cf539dac8
      * @param record the updated record
      * @return update count
      */
@@ -55,6 +76,7 @@ public interface EventMapper {
 
     /**
      * select all
+<<<<<<< HEAD
      *
      * @param owner
      * @return
